@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact & Volunteer — ISKCON Youth Forum, Sylhet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="brand" style="text-decoration:none;"><span class="dot"></span> IYF · Sylhet</a>
+  <div class="navlinks">
+    <a href="index.html#about">About</a>
+    <a href="courses.html">Courses</a>
+    <a href="events.html">Events</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="index.html#visit">Visit</a>
+  </div>
+  <a href="contact.html" class="btn btn-ghost" style="padding:0.55rem 1.1rem; font-size:0.7rem;">Contact</a>
+</nav>
+
+<div class="ticker-wrap"><div class="ticker" id="ticker"></div></div>
+
+<header class="page-hero">
+  <div class="crumb"><a href="index.html">Home</a> / Contact</div>
+  <div class="eyebrow">Reach out</div>
+  <h1>Contact &amp; Volunteer</h1>
+  <p>Questions about programs, the Be SMART course, or want to help run the next festival — start here.</p>
+</header>
+
+<section>
+  <div class="form-grid">
+    <div class="form-panel">
+      <h3>General Inquiry</h3>
+      <form onsubmit="return false;">
+        <div class="field"><label for="name">Name</label><input id="name" type="text" placeholder="Your name"></div>
+        <div class="field"><label for="phone">Phone or WhatsApp</label><input id="phone" type="tel" placeholder="01XXX-XXXXXX"></div>
+        <div class="field"><label for="email">Email</label><input id="email" type="email" placeholder="you@example.com"></div>
+        <div class="field"><label for="msg">Message</label><textarea id="msg" placeholder="How can we help?"></textarea></div>
+        <button class="submit-btn" type="submit">Send Message</button>
+      </form>
+    </div>
+
+    <div class="form-panel">
+      <h3>Volunteer Sign-up</h3>
+      <form onsubmit="return false;">
+        <div class="field"><label for="vname">Name</label><input id="vname" type="text" placeholder="Your name"></div>
+        <div class="field"><label for="vphone">Phone or WhatsApp</label><input id="vphone" type="tel" placeholder="01XXX-XXXXXX"></div>
+        <div class="field">
+          <label for="varea">Where you'd like to help</label>
+          <select id="varea">
+            <option>Festival &amp; event support</option>
+            <option>Kitchen / prasadam</option>
+            <option>Kirtan &amp; stage</option>
+            <option>Course teaching assistant</option>
+            <option>Media &amp; photography</option>
+          </select>
+        </div>
+        <div class="field"><label for="vavail">Availability</label><input id="vavail" type="text" placeholder="e.g. weekends, evenings"></div>
+        <button class="submit-btn" type="submit">Sign Up to Volunteer</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--ink-2);">
+  <div class="section-head">
+    <div class="eyebrow">Direct lines</div>
+    <h2>Or reach us directly</h2>
+  </div>
+  <div class="contact-block" style="max-width:520px;">
+    <div class="contact-row"><span class="k">Phone</span><span class="v"><a href="tel:+8801714101688">01714-101688</a></span></div>
+    <div class="contact-row"><span class="k">WhatsApp</span><span class="v"><a href="https://wa.me/8801714101688" target="_blank" rel="noopener">+880 1714-101688</a></span></div>
+    <div class="contact-row"><span class="k">Alt. Number</span><span class="v"><a href="tel:+8801718781144">01718-781144</a></span></div>
+    <div class="contact-row"><span class="k">Email</span><span class="v"><a href="mailto:syl.gtv@gmail.com">syl.gtv@gmail.com</a></span></div>
+    <div class="contact-row"><span class="k">Messenger</span><span class="v"><a href="https://www.facebook.com/iyfsyl/" target="_blank" rel="noopener">Iskcon Youth Forum, Sylhet</a></span></div>
+  </div>
+</section>
+
+<footer>
+  <div class="fbrand">Hare Krishna 🙏 — ISKCON Youth Forum, Sylhet</div>
+  <div class="fmeta">UI CONCEPT · NOT AN ACTIVE SITE</div>
+</footer>
+
+<script>
+  const mantra = [["Hare Kṛṣṇa Hare Kṛṣṇa","a"], ["Kṛṣṇa Kṛṣṇa Hare Hare","b"], ["Hare Rāma Hare Rāma","a"], ["Rāma Rāma Hare Hare","b"]];
+  const t = document.getElementById('ticker');
+  let html = '';
+  for(let i=0;i<2;i++){ mantra.forEach(([txt,cls]) => { html += `<span class="${cls}">${txt}</span>`; }); }
+  t.innerHTML = html;
+</script>
+
+</body>
+</html>
