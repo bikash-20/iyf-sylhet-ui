@@ -38,4 +38,34 @@ if (!prefersReducedMotion) {
   timelineRows.forEach((el, index) => {
     animate(el, { opacity: [0, 1], x: [-14, 0] }, { duration: 0.55, delay: 0.08 * index + 0.1 });
   });
+
+  const scrollItems = Array.from(document.querySelectorAll(
+    '.card, .link-card, .event-row, .module, .form-panel, .contact-block, .course-meta, .smart-cell, .yt-frame, .gallery-grid figure, .map-box, .section-head, .about-text, .about-img'
+  ));
+
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const element = entry.target;
+      animate(element, { opacity: [0, 1], y: [24, 0], scale: [0.98, 1] }, { duration: 0.7, ease: 'easeOut' });
+      element.classList.add('revealed');
+      observer.unobserve(element);
+    });
+  }, { threshold: 0.16, rootMargin: '0px 0px -10% 0px' });
+
+  scrollItems.forEach(el => {
+    el.classList.add('reveal-on-scroll');
+    revealObserver.observe(el);
+  });
+
+  const heroImg = document.querySelector('.hero-img');
+  if (heroImg) {
+    let lastScroll = 0;
+    const updateHero = () => {
+      const offset = Math.min(window.scrollY, 220);
+      heroImg.style.transform = `translateY(${offset * 0.18}px) scale(1.02)`;
+      lastScroll = window.scrollY;
+    };
+    window.addEventListener('scroll', () => requestAnimationFrame(updateHero));
+  }
 }
