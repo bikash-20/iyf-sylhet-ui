@@ -85,9 +85,8 @@
   /* ---------- mantra ticker (signature element) ---------- */
   .ticker-wrap{
     position:relative; z-index:40;
-    background:rgba(11,8,19,0.88);
-    border-top:1px solid rgba(201,162,75,0.25);
-    border-bottom:1px solid rgba(201,162,75,0.25);
+    margin-top:75.3px;
+    background:transparent;
     overflow:hidden;
     white-space:nowrap;
     padding:0.7rem 0;
