@@ -104,9 +104,9 @@
   /* ---------- hero ---------- */
   .hero{
     position:relative;
-    min-height:84svh;
+    min-height:100svh;
     display:flex; align-items:flex-end;
-    padding:5.5rem 3vw 0.8rem;
+    padding:4.5rem 3vw 1rem;
     overflow:hidden;
   }
   .hero-img{
@@ -114,8 +114,8 @@
     background-image:url('radha_madhav.jpg');
     background-size:cover;
     background-position:center 10%;
-    filter:brightness(0.96) saturate(1.08);
-    transform:scale(1.04);
+    filter:brightness(0.98) saturate(1.1);
+    transform:scale(1.02);
     transition:transform .8s ease;
   }
   .hero:hover .hero-img{
