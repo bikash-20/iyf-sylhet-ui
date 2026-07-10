@@ -76,34 +76,40 @@
     font-family:'Fraunces', serif; font-size:1.05rem; font-weight:600;
   }
   .brand .dot{width:8px;height:8px;border-radius:50%;background:var(--saffron);box-shadow:0 0 10px var(--saffron);}
-  .navlinks{display:flex; gap:1rem; font-size:0.75rem; letter-spacing:0.02em;}
-  .navlinks .btn{padding:0.5rem 0.95rem; font-size:0.75rem;}
-  .navlinks a{opacity:0.8; text-decoration:none; transition:opacity .2s;}
+  .navlinks{display:flex; flex-wrap:wrap; justify-content:flex-end; gap:0.75rem; font-size:0.75rem; letter-spacing:0.02em; max-width:calc(100vw - 10rem); overflow-x:auto; padding-bottom:0.1rem;}
+  .navlinks::-webkit-scrollbar{display:none;}
+  .navlinks .btn{padding:0.45rem 0.9rem; font-size:0.72rem; white-space:nowrap;}
+  .navlinks a{opacity:0.85; text-decoration:none; transition:opacity .2s;}
   .navlinks a:hover{opacity:1; color:var(--saffron-soft);}
-  .navlinks{display:none;}
-  @media(min-width:860px){.navlinks{display:flex;}}
 
   /* ---------- mantra ticker (signature element) ---------- */
   .ticker-wrap{
     position:relative; z-index:40;
-    background:var(--ink-2);
+    background:rgba(11,8,19,0.88);
     border-top:1px solid rgba(201,162,75,0.25);
     border-bottom:1px solid rgba(201,162,75,0.25);
     overflow:hidden;
     white-space:nowrap;
-    padding:0.6rem 0;
+    padding:0.7rem 0;
   }
   .ticker{
     display:inline-flex;
-    animation:scroll 42s linear infinite;
+    animation:scroll 36s linear infinite;
+    min-width:240%;
+    align-items:center;
   }
   .ticker span{
     font-family:'IBM Plex Mono', monospace;
     font-size:0.78rem;
     letter-spacing:0.08em;
     color:var(--gold);
-    padding:0 2.2rem;
-    opacity:0.85;
+    padding:0 1rem;
+    opacity:0.95;
+    min-width:fit-content;
+  }
+  @media(max-width:700px){
+    .ticker-wrap{padding:0.45rem 0;}
+    .ticker span{font-size:0.68rem; padding:0 0.85rem;}
   }
   .ticker span.b{color:var(--ivory-dim);}
   @keyframes scroll{
